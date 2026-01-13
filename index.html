@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pindorama</title>
+
+  <!-- Fonte pixel -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <h1>PINDORAMA</h1>
+    <p class="subtitle">RPG Tower Defense</p>
+  </header>
+
+  <!-- ===== INTRO ===== -->
+  <section class="panel">
+    <h2>Bem-vindo a Pindorama</h2>
+    <p>
+      Escolha um dos deuses brasileiros para guiar seu personagem através de
+      ondas de inimigos. Construa torres defensivas, domine poderes ancestrais
+      e proteja a terra mítica de Pindorama.
+    </p>
+    <small>
+      Uma terra lendária onde a mitologia indígena brasileira ganha vida
+      em um épico jogo de estratégia.
+    </small>
+  </section>
+
+  <!-- ===== ESCOLHA DO DEUS ===== -->
+  <section class="panel" id="selectionStage">
+    <h2>Escolha seu Deus</h2>
+
+    <div class="carousel">
+
+      <!-- DESCRIÇÃO -->
+      <div class="god-description">
+        <h3 id="god-name">Tupã</h3>
+        <p id="god-text">
+          Deus do trovão e do som. Tupã protege a terra sagrada com relâmpagos.
+        </p>
+      </div>
+
+      <!-- BOTÃO ESQUERDA -->
+      <button class="carousel-btn" id="prev">◀</button>
+
+      <!-- JANELA -->
+      <div class="carousel-window">
+        <div class="carousel-track">
+
+          <div class="god-card">
+            <img src="imagens/tupa.png" alt="Tupã">
+            <span>Tupã</span>
+          </div>
+
+          <div class="god-card">
+            <img src="imagens/jaci.png" alt="Jaci">
+            <span>Jaci</span>
+          </div>
+
+          <div class="god-card">
+            <img src="imagens/ceuci.png" alt="Ceuci">
+            <span>Ceuci</span>
+          </div>
+
+          <div class="god-card">
+            <img src="imagens/guaraci.png" alt="Guaraci">
+            <span>Guaraci</span>
+          </div>
+
+          <div class="god-card">
+            <img src="imagens/iara.png" alt="Iara">
+            <span>Iara</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BOTÃO DIREITA -->
+      <button class="carousel-btn" id="next">▶</button>
+
+    </div>
+  </section>
+
+  <!-- ===== PAINEL DO PERSONAGEM ===== -->
+  <section class="character-panel hidden" id="characterPanel">
+
+    <div class="character-preview">
+      <div class="preview-frame">
+        <img id="characterImage" src="" alt="">
+      </div>
+    </div>
+
+    <div class="character-info">
+      <h3 id="characterName"></h3>
+
+      <p class="character-class">
+        Classe: <span id="characterClass"></span>
+      </p>
+
+      <p class="character-role" id="characterRole"></p>
+      <p class="character-summary" id="characterSummary"></p>
+
+      <div class="abilities">
+        <h4>Habilidades</h4>
+        <ul id="abilitiesList"></ul>
+      </div>
+
+      <button class="btn-primary" id="btnConfirmarSelecao">
+        Iniciar Jornada
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>Personalização</h3>
+      <p>Escolha um dos personagens disponíveis e entenda suas habilidades únicas!</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Tower Defense</h3>
+      <p>Construa torres estrategicamente para deter as ondas inimigas.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Poderes Divinos</h3>
+      <p>Use habilidades ancestrais concedidas pelos deuses.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Mitologia</h3>
+      <p>Explore a rica mitologia indígena brasileira.</p>
+    </div>
+  </section>
+
+  <!-- ===== BOTÕES FINAIS ===== -->
+  <div class="main-action">
+    <button class="btn-primary">Começar Jogo</button>
+    <button class="btn-secondary">Sobre o Jogo</button>
+  </div>
+
+  <script src="js/carrossel.js"></script>
+</body>
+</html>
