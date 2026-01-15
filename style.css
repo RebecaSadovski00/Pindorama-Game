@@ -1,0 +1,426 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0e130f;
+  color: #e6e6e6;
+  font-family: 'Press Start 2P', monospace;
+  image-rendering: pixelated;
+  
+  background-image: url("imagens/fundo3.png");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+}
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  color: orange;
+}
+.hero-bg {
+  width: 80%;
+  max-width: 800px;
+  border: 4px solid #1b1b1b;
+}
+
+.subtitle {
+  font-size: 10px;
+  margin-top: 8px;
+  color: #fdffff;
+}
+.panel {
+  background-color: #1e2a22;
+  border: 4px solid #1b1b1b;
+  outline: 2px solid #0766be;
+  padding: 28px;
+  margin: 40px auto;
+  width: 80%;
+  max-width: 900px;
+}
+.panel h2 {
+  font-size: 15px;
+  line-height: 3.0;
+}
+.panel p {
+  font-size: 10px;
+  line-height: 1.8;
+  max-width: 700px;
+}
+.panel small {
+  display: block;
+  margin-top: 12px;
+  font-size: 8px;
+  opacity: 0.8;
+}
+.character-panel {
+  display: flex;
+  gap: 24px;
+  background-color: #1e2a22;
+  border: 4px solid #1b1b1b;
+  outline: 2px solid #0766be;
+  padding: 24px;
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+.character-preview img {
+  width: 180px;
+  image-rendering: pixelated;
+}
+
+.character-info h3 {
+  color: #ff6a00;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.character-class,
+.character-role,
+.character-summary {
+  font-size: 9px;
+  line-height: 1.8;
+}
+
+.abilities ul {
+  margin-top: 8px;
+  font-size: 9px;
+}
+.hidden {
+  display: none;
+}
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+.god-card {
+  background-color: #24352a;
+  border: 4px solid #1b1b1b;
+  padding: 8px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+.god-card:hover{
+   border: 3px solid #ff6a00;
+}
+.god-card img {
+  width: 90px;
+  height: 90px;
+}
+.god-card span {
+  display: block;
+  margin-top: 8px;
+  font-size: 9px;
+}
+.god-description {
+  margin-top: 24px;
+  background-color: #1e2a22;
+  border: 3px solid #1b1b1b;
+  outline: 2px solid #3a5f4c;
+  padding: 20px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.god-description h3 {
+  color: #ff6a00;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.god-description p {
+  font-size: 9px;
+  line-height: 2;
+}
+.fade-out {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: #1e2a22;
+  border: 3px solid #1b1b1b;
+  outline: 2px solid #3a5f4c;
+  padding: 16px;
+}
+
+.feature-card h3 {
+  color: #ff6a00;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+.feature-card p {
+  font-size: 9px;
+  line-height: 1.6;
+}
+.main-action {
+  text-align: center;
+  margin: 50px 0;
+}
+button {
+  font-family: 'Press Start 2P', monospace;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+}
+.btn-primary {
+  background-color: #ff6a00;
+  color: #1b1b1b;
+  margin-bottom: 16px;
+}
+.btn-primary:hover {
+  background-color: #ff8c2b;
+}
+.btn-secondary {
+  background-color: #2f5d50;
+  color: #e6e6e6;
+}
+.btn-secondary:hover {
+  background-color: #3a7a66;
+}
+.character-info .btn-primary {
+  display: inline-block;
+  margin-top: 32px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ===== CARROSSEL DE DEUSES ===== */
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.carousel-window {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;              /* ajuste se você usa outro gap */
+  will-change: transform;
+  transition: transform 0.5s ease; /* suaviza a mudança */
+}
+.carousel-track .god-card {
+  flex: 0 0 150px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  transform: scale(0.92);
+  filter: brightness(0.85);
+  
+}
+
+/* Card selecionado fica maior e em destaque */
+.carousel-track .god-card.selected {
+  transform: scale(1.1);
+  filter: brightness(1);
+  z-index: 2;
+}
+
+/* destaque do selecionado */
+.carousel-btn {
+  background-color: #1e2a22;
+  color: #ff6a00;
+  border: 3px solid #1b1b1b;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+.carousel-btn:hover {
+  background-color: #2f5d50;
+}
+
+.character-panel {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.character-preview {
+  flex-shrink: 0;
+}
+.preview-frame {
+  background-color: #24352a;
+  border: 4px solid #1b1b1b;
+  outline: 2px solid #3a5f4c;
+  padding: 16px;
+}
+
+.preview-frame img {
+  width: 160px;
+  image-rendering: pixelated;
+}
+.character-info h3 {
+  color: #ff6a00;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.character-class,
+.character-role,
+.character-summary {
+  font-size: 9px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.character-class span {
+  color: #ff8c2b;
+}
+
+.abilities h4 {
+  font-size: 10px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #ff6a00;
+}
+
+.abilities ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.abilities li {
+  font-size: 9px;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+.hidden {
+  display: none;
+}
+#abilitiesList {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.ability-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ability-item img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  border: 2px solid #1b1b1b;
+  background-color: #24352a;
+}
+
+.ability-item strong {
+  font-size: 9px;
+  color: #ff6a00;
+}
+
+.ability-item p {
+  font-size: 8px;
+  margin: 2px 0 0;
+  line-height: 1.4;
+} 
+.abilities-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.abilities-character-img {
+  width: 64px;        
+  height: 64px;
+  object-fit: contain;
+  image-rendering: pixelated;
+
+  border: 2px solid #ff7a00;
+  background: #0b0f14;
+  padding: 4px;
+}
+.abilities {
+  margin-top: 16px;
+}
+
+#abilitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.skill-icon {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+}
+.ability-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px; 
+}
+
+.ability-item img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+.guaraci-corte {
+  width: 180px;
+  height: 200px;        
+  object-fit: cover;
+  object-position: center 30%;
+}
+@keyframes flutuar-personagem {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#characterImage {
+  animation: flutuar-personagem 3s ease-in-out infinite;
+  filter: drop-shadow(0 6px 6px rgba(230, 196, 6, 0.4));
+
+  margin: 12px;
+  padding: 6px;
+  background-color: #eaf122;
+  border: 3px solid #1b1b1b;
+}
